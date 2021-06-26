@@ -37,29 +37,40 @@ struct RecycleView: View {
                 .foregroundColor(.white)
                 .frame(width:395.0, height: 650)
             VStack{
-                Text("Recycle").font(.title).padding(.trailing, 250)
+                HStack{
+                Text("Recycle").font(.title).padding(.trailing, 200)
+                    Image(systemName: "arrow.3.trianglepath").resizable().frame(width:30, height:30)
+            }
                 Spacer().frame(height:700)
             }
             
             VStack{
                 HStack{
                     Text("Track").font(.title)
-                    Spacer().frame(width: 150)
-                    Text("Learn").font(.title)
+                        .foregroundColor(Color(red: 112/255, green: 112/255, blue: 112/255))
+                        .padding(.all, 10)
+                        .padding(.horizontal, 10)
+                        .background(Color(red: 212/255, green: 221/255, blue: 217/255))
+                        .cornerRadius(20)
+                    Spacer().frame(width: 100)
+                    Text("Learn").font(.title).foregroundColor(Color(red: 112/255, green: 112/255, blue: 112/255))
+                        .padding(.all, 10)
+                        .padding(.horizontal, 10)
+                        .background(Color(red: 212/255, green: 221/255, blue: 217/255)).cornerRadius(20)
                     
                 }
-                Spacer().frame(height:50)
+                Spacer().frame(height:55)
                 Image(systemName: "circle").resizable().frame(width: 250, height: 250).foregroundColor(Color(red: 212/255, green: 221/255, blue: 217/255))
-                Spacer().frame(height:250)
+                Spacer().frame(height:200)
             }
                 VStack{
                     Text(String(counter))
                         .font(.largeTitle).foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
-                    Spacer().frame(height:175)
+                    Spacer().frame(height:120)
                 }
                 
                 VStack{
-                    Spacer().frame(height:225)
+                    Spacer().frame(height:325)
                     Button(action: {
                         counter += 1
                     }, label: {
@@ -70,7 +81,7 @@ struct RecycleView: View {
                     })
                 }
                 VStack{
-                    Spacer().frame(height: 600)
+                    Spacer().frame(height: 650)
                     Text("Date")
                         .bold()
                         .foregroundColor(.gray)
@@ -78,7 +89,7 @@ struct RecycleView: View {
                         .padding(.horizontal, 50)
                         .background(Color(red: 212/255, green: 221/255, blue: 217/255))
                         .cornerRadius(20)
-                    Spacer().frame(height: 100)
+                    Spacer().frame(height: 60)
                     Image(systemName: "person.crop.circle.fill").resizable().frame(width:40, height:40).foregroundColor(.white)
                 }
                 
@@ -91,6 +102,6 @@ struct RecycleView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            RecycleView()
         }
     }
