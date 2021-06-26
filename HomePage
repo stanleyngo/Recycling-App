@@ -9,11 +9,20 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView{
-            RecycleView().navigationTitle("Recycle")
-            
+            VStack{
+                RecycleView().offset(y: -30)
+                NavigationLink(destination: Information(), label: {Text("CLICK ME")})
+            }
         }
     }
 }
+
+struct Information: View {
+    var body: some View {
+        Text("Hello")
+    }
+}
+
 struct RecycleView: View {
     @State var counter = 0
     var body: some View {
@@ -27,6 +36,10 @@ struct RecycleView: View {
             Rectangle()
                 .foregroundColor(.white)
                 .frame(width:395.0, height: 650)
+            VStack{
+                Text("Recycle").font(.title).padding(.trailing, 250)
+                Spacer().frame(height:700)
+            }
             
             VStack{
                 HStack{
@@ -37,11 +50,12 @@ struct RecycleView: View {
                 }
                 Spacer().frame(height:50)
                 Image(systemName: "circle").resizable().frame(width: 250, height: 250).foregroundColor(Color(red: 212/255, green: 221/255, blue: 217/255))
+                Spacer().frame(height:250)
             }
                 VStack{
                     Text(String(counter))
                         .font(.largeTitle).foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
-                    Spacer().frame(height:200)
+                    Spacer().frame(height:175)
                 }
                 
                 VStack{
@@ -56,7 +70,7 @@ struct RecycleView: View {
                     })
                 }
                 VStack{
-                    Spacer().frame(height: 500)
+                    Spacer().frame(height: 600)
                     Text("Date")
                         .bold()
                         .foregroundColor(.gray)
@@ -64,11 +78,9 @@ struct RecycleView: View {
                         .padding(.horizontal, 50)
                         .background(Color(red: 212/255, green: 221/255, blue: 217/255))
                         .cornerRadius(20)
-                    Spacer().frame(height: 50)
-                    Image(systemName: "person.crop.circle.fill").resizable().frame(width:40, height:40).foregroundColor(Color(red: 212/255, green: 221/255, blue: 217/255))
+                    Spacer().frame(height: 100)
+                    Image(systemName: "person.crop.circle.fill").resizable().frame(width:40, height:40).foregroundColor(.white)
                 }
-                
-                
                 
                 
             }
