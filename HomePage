@@ -1,26 +1,84 @@
-@State var counter = 0
+//
+//  ContentView.swift
+//  Landmarks
+//
+//  Created by Jasmine Zhen on 6/26/21.
+//
+
+import SwiftUI
+struct ContentView: View {
     var body: some View {
-        ZStack{
-            
-            //ProgressView(value: 1)
-            Image("OutlineBackGround").ignoresSafeArea()
-           
-            VStack{
-                
-                Text(String(counter))
-                    .font(.largeTitle)
-                    
-                Spacer().frame(height:150)
-                Button(action: {
-                    counter += 1
-                }, label: {
-                    Image(systemName: "circle")
-                        
-                })
-                
-            }
+        NavigationView{
+            RecycleView().navigationTitle("Recycle")
             
         }
+    }
+}
+struct RecycleView: View {
+    @State var counter = 0
+    var body: some View {
         
         
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
+                .edgesIgnoringSafeArea(.all)
+            
+            Rectangle()
+                .foregroundColor(.white)
+                .frame(width:395.0, height: 650)
+            
+            VStack{
+                HStack{
+                    Text("Track").font(.title)
+                    Spacer().frame(width: 150)
+                    Text("Learn").font(.title)
+                    
+                }
+                Spacer().frame(height:50)
+                Image(systemName: "circle").resizable().frame(width: 250, height: 250).foregroundColor(Color(red: 212/255, green: 221/255, blue: 217/255))
+            }
+                VStack{
+                    Text(String(counter))
+                        .font(.largeTitle).foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
+                    Spacer().frame(height:200)
+                }
+                
+                VStack{
+                    Spacer().frame(height:225)
+                    Button(action: {
+                        counter += 1
+                    }, label: {
+                        Image(systemName: "plus.circle.fill").resizable().frame(width: 50, height:50)
+                            .shadow(radius: 2)
+                            .foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
+                        
+                    })
+                }
+                VStack{
+                    Spacer().frame(height: 500)
+                    Text("Date")
+                        .bold()
+                        .foregroundColor(.gray)
+                        .padding(.all, 10)
+                        .padding(.horizontal, 50)
+                        .background(Color(red: 212/255, green: 221/255, blue: 217/255))
+                        .cornerRadius(20)
+                    Spacer().frame(height: 50)
+                    Image(systemName: "person.crop.circle.fill").resizable().frame(width:40, height:40).foregroundColor(Color(red: 212/255, green: 221/255, blue: 217/255))
+                }
+                
+                
+                
+                
+            }
+        }
+    }
+    
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
