@@ -1,0 +1,63 @@
+struct Types: View {
+    var body: some View {
+        ZStack {
+            VStack{
+                
+                Rectangle().foregroundColor(.gray).frame(width:395, height:3)
+                Spacer().frame(height:600)
+            }
+            VStack{
+                HStack{
+                    Image(systemName:"lessthan").padding(.trailing,20)
+                    Text("Types").padding(.trailing,250)
+                    
+                }
+                Spacer().frame(height: 650)
+            }
+            
+            VStack{
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+                Spacer().frame(height:100)
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+                Spacer().frame(height:75)
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+                Spacer().frame(height:75)
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+            }
+            Spacer().frame(height:500)
+            VStack{
+                HStack{
+                    Image(systemName: "newspaper").resizable().frame(width:50, height:50).foregroundColor(.black)
+                    Spacer().frame(height:700)
+                    Image(systemName: "lightbulb").resizable().frame(width:50, height:50).foregroundColor(.black)
+                    Image(systemName: "shippingbox").resizable().frame(width:50, height:50).foregroundColor(.black)
+                    
+                    
+                }
+                //Image(systemName: "bolt.batteryblock").resizable().frame(width:50, height:50).foregroundColor(.black)
+                //
+                
+            }
+        }
+        
+        
+    }
+    
+    
+}
