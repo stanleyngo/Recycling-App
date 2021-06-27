@@ -1,0 +1,85 @@
+
+//  ContentView.swift
+//  Shared
+//
+//  Created by Navid Tabrizi on 6/26/21.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        ZStack {
+                    VStack{
+                        
+                        Rectangle().foregroundColor(.gray).frame(width:395, height:3)
+                        Spacer().frame(height:700)
+                    }
+                    VStack{
+                        HStack{
+                            Image(systemName:"lessthan").padding(.trailing,10)
+                            Text("Why and How").padding(.trailing,200)
+                        }
+                        Spacer().frame(height: 15)
+                        List{
+                                        Text("Benefits of Recycling")
+                                            .font(.body)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color.green)
+                                            .multilineTextAlignment(.center).padding(.leading,100)
+                        
+                                        Text("Reduces the amount of waste sent to landfills and incinerators")
+                                        Text("Conserves natural resources such as timber, water and minerals")
+                                        Text("Prevents pollution by reducing the need to collect new raw materials ")
+                                        Text("Saves energy ")
+                                        Text("Supports American manufacturing and conserves valuable resources")
+                                        Text("Helps create jobs in the recycling and manufacturing industries in the United States")
+                            }.onAppear {
+                                        UITableView.appearance().separatorStyle = .none
+                                       }
+                        VStack{
+                            
+                            Rectangle().foregroundColor(.gray).frame(width:395, height:3)
+                        }
+                        
+                        VStack{
+                            List{
+                                let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
+                                Text("3 Types of recycling are:")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.green)
+                                    .multilineTextAlignment(.center).padding(.leading,screenWidth/4)
+                                Text("Primary Recycling: is where a recyclable material or product can be recovered or reused without altering its current state. Such as Glassware, Toys and Electronics")
+                                    
+                                    
+                                Text("Secondary recycling: Is when the material may be reused in a different way than it was initially intended. Such as reuse of plastic, paper, wood, metals to do any type of DIY project.")
+                                Text("Tertiary Recycling: Tertiary recycling involves the chemical altering of the products or material to make it reusable.")
+                                    
+                                    
+                    
+                            }
+                        }
+                    }
+
+            
+                
+                
+                
+            
+            
+            
+            
+            
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ContentView()
+            ContentView()
+        }
+    }
+}
