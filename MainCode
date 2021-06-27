@@ -1,0 +1,290 @@
+//
+//  ContentView.swift
+//  RecyclingTracker
+//
+//  Created by Steven Pham on 6/26/21.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        NavigationView{
+            VStack{
+                RecycleView().offset(y:-20)
+                
+            }
+            
+        }
+    }
+}
+
+struct RecycleView: View {
+    @State var counter = 0
+    var body: some View {
+        
+        
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
+                .edgesIgnoringSafeArea(.all)
+            
+            Rectangle()
+                .foregroundColor(.white)
+                .frame(width:395.0, height: 650)
+            VStack{
+                HStack{
+                Text("Recycle").font(.title).padding(.trailing, 200)
+                    Image(systemName: "arrow.3.trianglepath").resizable().frame(width:30, height:30)
+            }
+                Spacer().frame(height:700)
+            }
+            
+            VStack{
+                HStack{
+                    NavigationLink(
+                        destination: CircleView(),
+                        label: {
+                            Text("Track")
+                        }).font(.system(size: 25))
+                        .foregroundColor(Color(red: 112/255, green: 112/255, blue: 112/255))
+                        .padding(.all, 10)
+                        .padding(.horizontal, 10)
+                        .background(Color(red: 212/255, green: 221/255, blue: 217/255))
+                        .cornerRadius(20)
+                    Spacer().frame(width: 100)
+                    NavigationLink(
+                        destination: WhyAndHowView(),
+                        label: {
+                            Text("Learn")
+                        }).font(.system(size: 25)).foregroundColor(Color(red: 112/255, green: 112/255, blue: 112/255))
+                        .padding(.all, 10)
+                        .padding(.horizontal, 10)
+                        .background(Color(red: 212/255, green: 221/255, blue: 217/255)).cornerRadius(20)
+                    
+                }
+                Spacer().frame(height:55)
+                Image(systemName: "circle").resizable().frame(width: 250, height: 250).foregroundColor(Color(red: 212/255, green: 221/255, blue: 217/255))
+                Spacer().frame(height:200)
+            }
+                VStack{
+                    Text(String(counter))
+                        .font(.system(size: 100)).foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
+                    Spacer().frame(height:105)
+                }
+                
+                VStack{
+                    Spacer().frame(height:325)
+                    Button(action: {
+                        counter += 1
+                    }, label: {
+                        Image(systemName: "plus.circle.fill").resizable().frame(width: 50, height:50)
+                            .shadow(radius: 2)
+                            .foregroundColor(Color(red: 172/255, green: 242/255, blue: 186/255))
+                        
+                    })
+                }
+                VStack{
+                    Spacer().frame(height: 650)
+                    Text("Date").font(.system(size: 20))
+                        .bold()
+                        .foregroundColor(.gray)
+                        .padding(.all, 10)
+                        .padding(.horizontal, 30)
+                        .background(Color(red: 212/255, green: 221/255, blue: 217/255))
+                        .cornerRadius(20)
+                    Spacer().frame(height: 60)
+                    Image(systemName: "person.crop.circle.fill").resizable().frame(width:40, height:40).foregroundColor(.white)
+                }
+                
+                
+            }
+        }
+    }
+
+struct Types: View {
+    var body: some View {
+        ZStack {
+            VStack{
+                
+                Rectangle().foregroundColor(.gray).frame(width:395, height:3)
+                Spacer().frame(height:600)
+            }
+            VStack{
+                HStack{
+                    Image(systemName:"lessthan").padding(.trailing,20)
+                    Text("Types").padding(.trailing,250)
+                    
+                }
+                Spacer().frame(height: 650)
+            }
+            
+            VStack{
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+                Spacer().frame(height:100)
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+                Spacer().frame(height:75)
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+                Spacer().frame(height:75)
+                HStack{
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                    Spacer().frame(width:100)
+                    Image(systemName: "circle.fill").resizable().frame(width:100, height:100).foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                }
+            }
+            Spacer().frame(height:500)
+            VStack{
+                HStack{
+                    Image(systemName: "newspaper").resizable().frame(width:50, height:50).foregroundColor(.black)
+                    Spacer().frame(height:700)
+                    Image(systemName: "lightbulb").resizable().frame(width:50, height:50).foregroundColor(.black)
+                    Image(systemName: "shippingbox").resizable().frame(width:50, height:50).foregroundColor(.black)
+                    
+                    
+                }
+            
+                
+            }
+        }
+        
+        
+    }
+    
+    
+}
+
+let columns: [GridItem] = [GridItem(.flexible()),
+                           GridItem(.flexible()),]
+
+struct CircleView: View {
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                LazyVGrid(columns: columns, spacing: 0) {
+                    ForEach(0..<4) { i in
+                        ZStack {
+                            Circle()
+                                .foregroundColor(Color(red:150/255, green: 226/255, blue:165/255))
+                                .frame(width: geometry.size.width/3 - 15,
+                                       height: geometry.size.width - 30)
+                        }
+                    }
+                }
+            }
+            VStack {
+                Text("Why and How").padding(.top, 275).padding(.leading, 50)
+                Image(systemName: "questionmark").resizable().offset(y: -135).offset(x:15).foregroundColor(.white)
+                    .frame(width: 20, height: 40)
+            }
+            VStack {
+                Text("Effects and Impacts").padding(.top, 275).padding(.leading, 220)
+                Image(systemName: "exclamationmark").resizable()
+                    .offset(y: -140)
+                    .offset(x: 110)
+                    .frame(width: 15, height: 40)
+                    .foregroundColor(.white)
+            }
+            VStack {
+                Text("Statistics").padding(.top, 670).padding(.leading, 60)
+                Image(systemName:"chart.bar").resizable()
+                    .offset(y: -130)
+                    .offset(x: 29)
+                    .frame(width:40, height: 30)
+                    .foregroundColor(.white)
+            }
+            VStack {
+                Text("Types").padding(.top, 670).padding(.leading, 280)
+                Image(systemName:"trash")
+                    .resizable()
+                    .offset(y: -135)
+                    .offset(x: 135)
+                    .frame(width: 30, height: 40)
+                    .foregroundColor(.white)
+            }
+        }
+    }
+}
+
+struct WhyAndHowView : View{
+    var body: some View {
+    ZStack {
+                        VStack{
+                            
+                            Rectangle().foregroundColor(.gray).frame(width:395, height:3)
+                            Spacer().frame(height:700)
+                        }
+                        VStack{
+                            HStack{
+                                Image(systemName:"lessthan").padding(.trailing,10)
+                                Text("Why and How").padding(.trailing,200)
+                            }
+                            Spacer().frame(height: 15)
+                            List{
+                                            Text("Benefits of Recycling")
+                                                .font(.body)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(Color.green)
+                                                .multilineTextAlignment(.center).padding(.leading,100)
+                            
+                                            Text("Reduces the amount of waste sent to landfills and incinerators")
+                                            Text("Conserves natural resources such as timber, water and minerals")
+                                            Text("Prevents pollution by reducing the need to collect new raw materials ")
+                                            Text("Saves energy ")
+                                            Text("Supports American manufacturing and conserves valuable resources")
+                                            Text("Helps create jobs in the recycling and manufacturing industries in the United States")
+                                }.onAppear {
+                                            UITableView.appearance().separatorStyle = .none
+                                           }
+                            VStack{
+                                
+                                Rectangle().foregroundColor(.gray).frame(width:395, height:3)
+                            }
+                            
+                            VStack{
+                                List{
+                                    let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
+                                    Text("3 Types of recycling are:")
+                                        .font(.body)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.green)
+                                        .multilineTextAlignment(.center).padding(.leading,screenWidth/4)
+                                    Text("Primary Recycling: is where a recyclable material or product can be recovered or reused without altering its current state. Such as Glassware, Toys and Electronics")
+                                        
+                                        
+                                    Text("Secondary recycling: Is when the material may be reused in a different way than it was initially intended. Such as reuse of plastic, paper, wood, metals to do any type of DIY project.")
+                                    Text("Tertiary Recycling: Tertiary recycling involves the chemical altering of the products or material to make it reusable.")
+                                        
+                                        
+                        
+                                }
+                            }
+                        }
+
+                
+                    
+                    
+                    
+        
+                
+            }
+}
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
